@@ -20,6 +20,8 @@ UI for ConcurrentBookingSystem
 * Push Code on your master Branch
 > git push -u origin master
 
+> npm add expo
+
 > npx create-expo-app AwesomeProject
 > npm start web
 > npm start iOS
