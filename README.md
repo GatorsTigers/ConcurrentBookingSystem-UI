@@ -26,5 +26,7 @@ UI for ConcurrentBookingSystem
 # Expo version that works for web - ~48.0.17
 * Packages to install for web
 > npx expo install @expo/webpack-config
+
 > npx expo install @expo/webpack-config
+
 > npx expo install @expo/webpack-config
