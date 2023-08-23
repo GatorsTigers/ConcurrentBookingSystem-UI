@@ -1,9 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import LoginScreen from './LoginScreen';
-import SearchScreen from './SearchScreen';
 import LoginScreen from './src/features/auth/screen/LoginScreen';
-import HomePage from './src/features/dashboard/screen/HomePage';
+import SearchScreen from './src/features/dashboard/screen/SearchScreen';
 import { TheaterShowScreen } from './src/features/theatrer/screen/theater-shows';
 
 export default function App() {
