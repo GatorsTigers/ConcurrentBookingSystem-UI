@@ -18,15 +18,11 @@
     "react-bootstrap": "^2.8.0",
     "react-dom": "18.2.0",
     "react-native": "0.72.3",
-<<<<<<< Updated upstream
-    "react-native-web": "~0.19.6"
-=======
     "react-native-autocomplete": "^0.4.0",
     "react-native-google-places-autocomplete": "^2.5.1",
     "react-native-paper": "^5.10.3",
     "react-native-web": "~0.19.6",
     "styled-components": "^6.0.7"
->>>>>>> Stashed changes
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
