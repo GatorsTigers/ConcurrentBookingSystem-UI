@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import { urls } from './Config';
+import { urls } from '../../../utils/Config';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 
 const HomePage = () => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import { urls } from './Config';
+import { urls } from '../../../utils/Config';
 
 const LoginScreen = () =>  {
     const [emailId, setEmailId] = useState('');
