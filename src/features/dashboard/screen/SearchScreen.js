@@ -35,6 +35,7 @@ const Dropdown = ({ data, handleSelection }) => (
   const SearchScreen = () => {
     const [city, setCity] = useState('');
     const [cities, setCities] = useState([{id: 1, name: 'Kalaburagi'}, {id: 2, name:'Bidar'}, {id: 3, name:'Raichur'}]);
+    //TODO, fetch these from API
     const [movies, setMovies] = useState([{
         id: 1,
         name: 'Oppenheimer',
