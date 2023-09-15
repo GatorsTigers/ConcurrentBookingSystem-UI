@@ -1,62 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { View, StyleSheet, FlatList, TouchableWithoutFeedback } from 'react-native';
+// import axios from 'axios';
+import { View, StyleSheet, FlatList } from 'react-native';
 import {urls, majorCities} from '/src/utils/Config.js'
-import { Searchbar, Card, Text } from 'react-native-paper';
+import { Searchbar } from 'react-native-paper';
 import Header from '/src/features/common/Header.js'
 import Footer from '/src/features/common/Footer.js'
-
-const MovieCard = ({movieName, imageUrl, cardContent}) => (
-  <Card >
-    <Card.Title title={movieName}/>
-    <Card.Cover source={{ uri:  imageUrl}} />
-    <Card.Content>
-      <Text variant="bodySmall">{cardContent}</Text>
-    </Card.Content>
-  </Card>
-);
-
-const Dropdown = ({ data, handleSelection }) => (
-    <FlatList
-      style={styles.suggestions}
-      data={data}
-      renderItem={({item}) => 
-        <TouchableWithoutFeedback onPress={() => handleSelection(item)}>
-          <Text>{item.name}</Text>
-        </TouchableWithoutFeedback>
-      }
-      keyExtractor={(item) => item.id}
-    />
-  );
+import { movieData } from '../../data/movie-data';
+import {Dropdown}  from '../component/Dropdown.js';
+import {MovieCard} from '../component/Movie.js'
 
   const SearchScreen = () => {
     const [city, setCity] = useState('');
     const [cities, setCities] = useState(majorCities);
     //TODO, fetch these from API
-    const [movies, setMovies] = useState([{
-        id: 1,
-        name: 'Oppenheimer',
-        imageUrl: 'https://picsum.photos/600'
-      },
-      {
-        id: 2,
-        name: 'Mission Impossible: X',
-        imageUrl: 'https://picsum.photos/700'
-      },
-      {
-        id: 3,
-        name: 'Barbie',
-        imageUrl: 'https://picsum.photos/800'
-      },
-      {
-        id: 4,
-        name: 'No Hard Feelings',
-        imageUrl: 'https://picsum.photos/900'
-      }])
+    const [movies, setMovies] = useState(movieData)
 
     useEffect(() => {
       if(city.length > 2) {
-        axios.get(urls.getCitiesUrl)
+        fetch(urls.getCitiesUrl, {
+          mode: 'cors',
+          method: 'GET'
+         })
         .then(response => {
           setCities(response.data)
         })
@@ -76,8 +40,12 @@ const Dropdown = ({ data, handleSelection }) => (
 
     const handleCitySelection = (city) => {
       setCity(city.name)
-      axios.get(urls.getMoviesUrl + "?city=${city}")
+      fetch(urls.getMoviesUrl + `?city=${city}`, {
+       mode: 'cors',
+       method: 'GET'
+      })
       .then(response => {
+        console.log("Get City api: " + response.json)
         setMovies(response.data)
       })
       .catch(error => {
@@ -128,10 +96,6 @@ const styles = StyleSheet.create({
       width: 500,
       borderWidth: 2,
       borderRadius: 30,
-    },
-    suggestions: {
-        padding: 10,
-        backgroundColor: '#e6e6ff',
     },
     card: {
       width: 250,

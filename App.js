@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import LoginScreen from './src/features/auth/screen/LoginScreen';
-import SearchScreen from './src/features/dashboard/screen/SearchScreen';
-import { TheaterShowScreen } from './src/features/theatrer/screen/theater-shows';
+import SearchScreen from './src/features/dashboard/search/screen/SearchScreen';
+import { TheaterShowScreen } from './src/features/theater/screen/theater-shows';
 
 export default function App() {
   return (
@@ -10,7 +10,8 @@ export default function App() {
       {/* <Text>Open up App.js to start working on your app!</Text> */}
       {/* <StatusBar style="auto" /> */}
       {/* <LoginScreen/> */}
-      <SearchScreen/>
+      {/* <SearchScreen/> */}
+      <TheaterShowScreen/>
     </View>
   );
 }
