@@ -2,13 +2,13 @@ import { styled } from "styled-components";
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import CalendarStrip from 'react-native-calendar-strip';
-import Header from '/src/features/common/Header.js'
-import Footer from '/src/features/common/Footer.js'
-import {MovieCard} from '/src/features/dashboard/search/component/Movie'
-import { movieData } from '../../dashboard/data/movie-data';
-import {theaterShowData} from '../data/theater-show-data'
-import {urls} from '/src/utils/Config.js'
-import {TheaterShow} from '../component/theater-show-row'
+import Header from './Header.js'
+import Footer from './Footer.js'
+import {MovieCard} from './Movie'
+import { movieData } from './movie-data';
+import {theaterShowData} from './theater-show-data'
+import {urls} from './Config.js'
+import {TheaterShow} from './theater-show-row'
 
 
 export const TheaterShowScreen = ({movieId}) => {
