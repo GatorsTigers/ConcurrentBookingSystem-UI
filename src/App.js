@@ -1,16 +1,19 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './style.css';
 import LoginScreen from './LoginScreen';
 import SearchScreen from './SearchScreen';
-// import TheaterShowScreen from './theater-shows';
+import TheaterShowScreen from './TheaterShow';
 
 function App() {
   return (
-    <div>
-      <LoginScreen />
-      {/* <SearchScreen /> */}
-      {/* <TheaterShowScreen /> */}
-    </div>
+    <>
+    <Routes>
+      <Route path="/" element={<LoginScreen />}/>
+      <Route path="/search" element={<SearchScreen/>}/>
+      <Route path="/theaterShow" element={<TheaterShowScreen/>}/>
+    </Routes>
+    </>
   );
 }
 

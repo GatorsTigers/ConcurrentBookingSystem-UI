@@ -79,9 +79,9 @@ const SearchScreen = () => {
         />
         <Dropdown data={cities} handleSelection={handleCitySelection}/>
         </div>
-      {/* <div className="movies-container">
+      <div className="movies-container">
         {movies.map((item) => (
-          <div key={item.id} className="card">
+          <div key={item.id} className="movie-card">
             <MovieCard
               movieName={item.name}
               imageUrl={item.imageUrl}
@@ -89,7 +89,7 @@ const SearchScreen = () => {
             />
           </div>
         ))}
-      </div> */}
+      </div>
       <Footer />
     </>
   );

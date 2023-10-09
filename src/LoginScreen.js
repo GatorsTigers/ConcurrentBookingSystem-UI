@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer'
@@ -7,6 +8,8 @@ const LoginScreen = () => {
     const [emailId, setEmailId] = useState('');
     const [password, setPassword] = useState('');
     const [loginState, setLoginState] = useState(0);
+    const navigate = useNavigate();
+
 
     const handleLogin = async () => {
         try {
@@ -17,6 +20,7 @@ const LoginScreen = () => {
             console.log('Response: ', response);
             if (response.status === 200) {
                 setLoginState(1);
+                navigate("/search")
             } else {
                 setLoginState(2);
             }
