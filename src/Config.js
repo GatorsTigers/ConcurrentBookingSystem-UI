@@ -1,40 +1,40 @@
 export const urls = {
     'loginUrl': '/login',
-    'getCitiesUrl': 'http://localhost:8000/city',
-    'getMoviesUrl': 'http://localhost:8000/movie',
+    'getCitiesUrl': 'http://192.168.0.13:8000/city',
+    'getMoviesUrl': 'http://192.168.0.13:8000/movie',
     'getTheaterShowsUrl': 'http://localhost:8000/theater_show'
 }
 
 export const majorCities = [
     {
-      name: "New York City",
-      state: "New York",
+      cityId: 1,
+      cityName: "New York City",
+      cityState: "New York",
       country: "United States"
     },
     {
-      name: "Boston",
-      state: "Massachusetts",
+      cityId: 2,
+      cityName: "Boston",
+      cityState: "Massachusetts",
       country: "United States"
     },
     {
-      name: "Washington, D.C.",
-      state: "District of Columbia",
+      cityId: 3,
+      cityName: "Washington, D.C.",
+      cityState: "District of Columbia",
       country: "United States"
     },
     {
-      name: "Philadelphia",
-      state: "Pennsylvania",
+      cityId: 4,
+      cityName: "Philadelphia",
+      cityState: "Pennsylvania",
       country: "United States"
     },
     {
-      name: "Baltimore",
-      state: "Maryland",
+      cityId: 5,
+      cityName: "Baltimore",
+      cityState: "Maryland",
       country: "United States"
     },
-    {
-        name: "Balgalore",
-        state: "Maryland",
-        country: "United States"
-      },
   ];
   

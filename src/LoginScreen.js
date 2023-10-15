@@ -12,26 +12,25 @@ const LoginScreen = () => {
 
 
     const handleLogin = async () => {
-        try {
-            const response = await axios.post('/api/login', {
+            await axios.post('http://192.168.0.13:8000/auth/login', {
                 emailId: emailId,
                 password: password
+            }).then(response => {
+                if (response.status === 200) {
+                    setLoginState(1);
+                    navigate("/search")
+                }
+            })
+            .catch(error => {
+                if (error.response.status === 401)
+                    setLoginState(2);
             });
-            console.log('Response: ', response);
-            if (response.status === 200) {
-                setLoginState(1);
-                navigate("/search")
-            } else {
-                setLoginState(2);
-            }
-        } catch (error) {
-            console.error('Error: ', error);
-            setLoginState(3);
-        }
     };
 
     const handleForgotPassword = () => {
         // TODO: Implement forgot password logic
+        setEmailId('');
+        setPassword('');
     };
 
     return (

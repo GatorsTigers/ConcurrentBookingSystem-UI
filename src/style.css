@@ -52,8 +52,7 @@
 
 .error-message {
     color: red;
-    padding: 10px;
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .search-container {
@@ -210,17 +209,26 @@
 
 .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     background-color: rebeccapurple;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .header h1 {
     color: white;
+    margin-left: 50%;
     font-size: 18px;
     font-weight: bold;
+}
+
+.header p {
+    color: white;
+    margin-right: 1%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .footer {

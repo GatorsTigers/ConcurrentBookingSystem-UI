@@ -4,7 +4,7 @@ import './style.css';
 const City = ({onSelect, item}) => {
   return (
     <div className="drop-down-element" onClick={() => onSelect(item)}>
-      {item.name}
+      {item.cityName}
     </div>
   )
 }
@@ -12,7 +12,7 @@ const City = ({onSelect, item}) => {
 const Dropdown = ({ data, handleSelection }) => (
   <div className="drop-down">
     {data.map(item => (
-      <div key={item.name}>
+      <div key={item.cityId}>
         <City onSelect={handleSelection} item={item}/>
       </div>
     ))}
